@@ -18,14 +18,14 @@ Surely you'd want to exit out of your character in-game before editing its save 
 the scripts in ./bin/ and ./share/diablo-2-tools will fail unless installed.
 
 <WINDOWS>
-install cygwin to get a linux environment + linux terminal (all installed by default). The install exe is on their website.
+install cygwin to get a linux environment + linux terminal (all installed by default). The install exe is on their website (https://www.cygwin.com).
 select to install cygwin perl5 package when you install cygwin
-install golang with the Windows installer on their website. The installer automatically adds the win32/win64/whatever `go` command to your system %PATH%
-  environmental variable. Cygwin inherits the Windows 10/11 %PATH% in its own $PATH and can run Win32/Win64 programs within that environmental variable
-  string/code/thing.
+install golang with the Windows installer on their website (https://go.dev). The installer automatically adds the win32/win64/whatever `go` command
+  to your system %PATH% environmental variable. Cygwin inherits the Windows 10/11 %PATH% in its own $PATH and can run Win32/Win64 programs within
+  that environmental variable string/code/thing.
 The go script this project uses assumes your Cygwin installation is on C:\ at C:\cygwin64
 Now to run Diablo II tools you just fire up your GUI terminal (which should be available as a shortcutted program on your Desktop) and you're ready
-  to install this project, install it, and use it just like in linux.
+  to install this project, install it (as stated below), and use it just like in linux.
 NOTE: if you download this project's ZIP file you'll want to copy the ZIP file to C:\cygwin64\home\YourWindowsUsername\
       through the Windows explorer. That way you can unzip the file in Windows explorer, cd to the directory in your Cygwin terminal,
       and install/use as-usual
@@ -45,10 +45,11 @@ just go:  bash uninstall.sh #in Cygwin terminal on Windows
 when you call d2-charselect-Safe.sh or d2-toonselect-Safe.sh (they're the same thing)
 all of your .d2s files within C:\Users (on Windows) or $WINEPREFIX/drive_c/users (on Linux if $WINEPREFIX exists)
                                                     or ~/.wine/drive_c/users (on Linux if $WINEPREFIX doesn't exist)
+get printed out into your terminal/tty (output)
 Then you can type the full path of the .d2s file and hit ENTER and now all of the diablo-2-tools will target that .d2s save file!
 
 What these tools lack:
-1) a way to edit stats (str, dex, health points, mana points)
+1) a way to edit stats (str, dex, health points, mana points, free stat points)
 2) a way to edit item stats (although you can download d2s files and save the item codes for injecting into any character)
 3) a way to revive your character if your character dies in hardcore
 4) a way to get the cow portal if you killed cow king
@@ -59,6 +60,12 @@ What these tools lack:
 <requires>
 golang: the `go` command
 perl5: the `perl` command
+
+<LINUX GOLANG>
+you probably have perl5 already installed. that works.
+to get golang/go you can do:
+<FEDORA LINUX> sudo dnf install golang
+<DEBIAN LINUX> sudo apt install golang
 
 <installed_files>
 /usr/bin/d2-charselect-Safe.sh #edit /etc/diablo-2-tools/char-selected.conf that is used by the scripts to know which Diablo 2 character you wish to edit/read/alter
