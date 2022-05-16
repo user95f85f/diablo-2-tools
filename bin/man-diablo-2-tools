@@ -1,0 +1,3 @@
+#!/bin/bash
+
+cat /usr/share/diablo-2-tools/MAN_PAGE_SORTA_README.txt
