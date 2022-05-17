@@ -10,6 +10,6 @@ cp bin/* /usr/bin/ || {
 cp -R share/diablo-2-tools /usr/share/
 mkdir /etc/diablo-2-tools
 touch /etc/diablo-2-tools/char-selected.conf
-chmod +w /etc/diablo-2-tools/char-selected.conf
+chmod a+w /etc/diablo-2-tools/char-selected.conf
 mkdir /var/cache/diablo-2-tools
-chmod +w /var/cache/diablo-2-tools
+chmod a+w /var/cache/diablo-2-tools
