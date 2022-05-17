@@ -139,17 +139,15 @@ func main(){
 
   //read the /etc/diablo-2-tools/char-selected.conf into the d2s_char_location variable
   // if we're on Windows read C:\cygwin64\etc\diablo-2-tools\char-selected.conf
-  d2s_char_location_contents := nil
-  d2s_file_location := ""
+  var d2s_file_location = ""
   if runtime.GOOS == "linux" {
     d2s_char_location_contents, err := ioutil.ReadFile("/etc/diablo-2-tools/char-selected.conf")
     check(err)
-    d2s_file_location = d2s_char_location_contents
-  }
-  else { //let's pray this is windows
+    d2s_file_location = string(d2s_char_location_contents)
+  } else { //let's pray this is windows
     d2s_char_location_contents, err := ioutil.ReadFile("C:\\cygwin64\\etc\\diablo-2-tools\\char-selected.conf")
     check(err)
-    d2s_file_location = d2s_char_location_contents
+    d2s_file_location = string(d2s_char_location_contents)
     // so the path will be something like:  /cygdrive/c/Users/blahuser/blahdir/blahdir/mychar.d2s
     // we need to convert that into C:\Users\blahuser\blahdir\blahdir\mychar.d2s
     d2s_file_location = strings.Replace(d2s_file_location, "/cygdrive/c", "C:", 1)

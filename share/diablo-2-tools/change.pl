@@ -27,8 +27,8 @@ if(! -f $D2sDataFile){
   die "$D2sDataFile does not exist! What do you want to change?";
 }
 if(-f $D2sRevertFile){
-  say "the backup file $D2sRevertFile already exists. retaining this version."
-  say 'delete this file if you want this script to backup your current d2s file.'
+  say "the backup file $D2sRevertFile already exists. retaining this version.";
+  say 'delete this file if you want this script to backup your current d2s file.';
 }
 else{
   say 'Saving d2s file to ', $D2sRevertFile;
