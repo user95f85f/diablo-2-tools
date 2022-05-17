@@ -1,11 +1,10 @@
 ================================
-Diablo II Tools! Version 2.0 (2022)
+Diablo II Tools! Version 3.0 (2022)
 "Who needs a character editor when you got scripts?"
 TARGET: linux + wine or windows + cygwin
 VERSIONS of Diablo II TARGET: single-player Diablo II non-Resurrected and probably Resurrected LoD 1.14d/1.15
-HOW WELL TESTED: 2% tested, this release was super rushed
+HOW WELL TESTED: 80% tested on linux
                  0% tested on windows
-                 I apologize already.
 ================================
 
 <linux assumption>
