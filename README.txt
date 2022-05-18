@@ -1,10 +1,10 @@
 ================================
-Diablo II Tools! Version 3.0 (2022)
+Diablo II Tools! Version 4.0 (2022)
 "Who needs a character editor when you got scripts?"
 TARGET: linux + wine or windows + cygwin
 VERSIONS of Diablo II TARGET: single-player Diablo II non-Resurrected and probably Resurrected LoD 1.14d/1.15
 HOW WELL TESTED: 80% tested on linux
-                 0% tested on windows
+                 82% tested on windows
 ================================
 
 <linux assumption>
@@ -18,6 +18,13 @@ the scripts in ./bin/ and ./share/diablo-2-tools will fail unless installed.
 
 <WINDOWS>
 install cygwin to get a linux environment + linux terminal (all installed by default). The install exe is on their website (https://www.cygwin.com).
+your Cygwin terminal needs to be ran as 'root'/admin to call
+  bash install.sh
+after the install you can revert back to your normal account/user
+  terminal.
+you can run the Cygwin terminal as admin by right-clicking your
+  "Cygwin Terminal" shortcut on your Desktop and selecting
+  "Run as administrator"
 select to install cygwin perl5 package when you install cygwin
 install golang with the Windows installer on their website (https://go.dev). The installer automatically adds the win32/win64/whatever `go` command
   to your system %PATH% environmental variable. Cygwin inherits the Windows 10/11 %PATH% in its own $PATH and can run Win32/Win64 programs within
@@ -91,10 +98,10 @@ to get golang/go you can do:
                           JM-inserter.go      #insert any perfect gem or rune or custom item code into typically the cube. this is called by d2-insertItem-Alters.sh
                                               #d2-insertItem-Alters.sh fixes the checksum by calling change.pl
                           make free.pl        #gives change.pl copy-and-paste codes. this is called by d2-makeFree-Safe.sh
-                          print-JM-potions.pl #searches for stamina potions and calls stam2rejuv.pl to convert them into full rejuvs, called by d2-stam2rejuv-Reads.sh
+                          print-JM-potions.pl #searches for stamina potions and calls stam2rejuv.pl to convert them into regular rejuvs, called by d2-stam2rejuv-Reads.sh
                           rename-toon.pl      #prints out the change.pl codes and a bash/terminal/tty command you can copy and paste to successfully
                                               #rename your toon/character/d2s-file, this is called by d2-renameChar-Safe.sh
-                          stam2rejuv.pl       #prints out the change.pl codes to convert the stamina potions to full rejuvs
+                          stam2rejuv.pl       #prints out the change.pl codes to convert the stamina potions to regular rejuvs
                           MAN_PAGE_SORTA_README.txt #viewed by running /usr/bin/man-diablo-2-tools
 
 
@@ -146,4 +153,4 @@ reads all of the stamina potions inside of your character and then you paste
   the output into here:
 cd /usr/share/diablo-2-tools/
 perl change.pl *copy-and-paste-here*
-# and that will change your toon from stamina to full rejuvs.
+# and that will change your toon from stamina to regular rejuvs.
