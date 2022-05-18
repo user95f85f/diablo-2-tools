@@ -1,6 +1,6 @@
 #!/usr/bin/perl
 # XXX this script converts a STAMINA potion
-#     into full rejuvs I think
+#     into regular rejuvs I think
 use warnings;
 use strict;
 use feature 'say';
