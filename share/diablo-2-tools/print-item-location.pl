@@ -22,7 +22,7 @@ my $LOCATION_INFO_GIVER = 0x000400080008ff0a;
 if($#ARGV != 0){
   myError('We need one argument.');
 }
-if($ARGV[0] !~ /^0x[0-9a-f]{24,120}$/){
+if($ARGV[0] !~ /^0x[0-9a-f]{24,200}$/){
   myError('Invalid hex representation.');
 }
 if(length($ARGV[0]) < 24){
