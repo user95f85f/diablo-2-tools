@@ -1,0 +1,53 @@
+<!-- Created by d2_inventory_screenshots_to_html.sh version whatever  --><script>
+function change_css(classname,element,value)
+{
+  var cssRules;
+  var added = false;
+  for (var S = 0; S < document.styleSheets.length; S++){
+    if (document.styleSheets[S]['rules']) {
+      cssRules = 'rules';
+    } else if (document.styleSheets[S]['cssRules']) {
+      cssRules = 'cssRules';
+    } else {
+      return;
+    }
+
+    for (var R = 0; R < document.styleSheets[S][cssRules].length; R++)
+    {
+      if (document.styleSheets[S][cssRules][R].selectorText == classname) {
+        if(document.styleSheets[S][cssRules][R].style[element]){
+          document.styleSheets[S][cssRules][R].style[element] = value;
+          added=true;
+          break;
+        }
+      }
+    }
+    if(!added)
+    {
+      try{
+        document.styleSheets[S].insertRule(classname+' { '+element+': '+value+'; }',document.styleSheets[S][cssRules].length);
+      } catch(err){
+        try{document.styleSheets[S].addRule(classname,element+': '+value+';');}catch(err){}
+      }
+    }
+  }
+}
+</script>
+<style>
+.redrect{background-color:rgba(255, 0, 0, 0.3)}
+</style>
+<div style="position:relative">
+<img src="d2inv_images/cropped_1.jpg" id="crop1" style="position:absolute;left:31px;top:111px;display:none"><div class="redrect" style="position:absolute;width:37px;height:30px;left:204px;top:146px" onmouseover="document.getElementById('crop1').style.display='block';change_css('.redrect', 'background-color', 'rgba(255, 0, 0, 0)')" onmouseout="document.getElementById('crop1').style.display='none';change_css('.redrect', 'background-color', 'rgba(255, 0, 0, 0.3)')"></div>
+<img src="d2inv_images/cropped_2.jpg" id="crop2" style="position:absolute;left:95px;top:111px;display:none"><div class="redrect" style="position:absolute;width:37px;height:30px;left:265px;top:331px" onmouseover="document.getElementById('crop2').style.display='block';change_css('.redrect', 'background-color', 'rgba(255, 0, 0, 0)')" onmouseout="document.getElementById('crop2').style.display='none';change_css('.redrect', 'background-color', 'rgba(255, 0, 0, 0.3)')"></div>
+<img src="d2inv_images/cropped_3.jpg" id="crop3" style="position:absolute;left:31px;top:207px;display:none"><div class="redrect" style="position:absolute;width:37px;height:30px;left:195px;top:233px" onmouseover="document.getElementById('crop3').style.display='block';change_css('.redrect', 'background-color', 'rgba(255, 0, 0, 0)')" onmouseout="document.getElementById('crop3').style.display='none';change_css('.redrect', 'background-color', 'rgba(255, 0, 0, 0.3)')"></div>
+<img src="d2inv_images/cropped_4.jpg" id="crop4" style="position:absolute;left:79px;top:79px;display:none"><div class="redrect" style="position:absolute;width:37px;height:30px;left:223px;top:167px" onmouseover="document.getElementById('crop4').style.display='block';change_css('.redrect', 'background-color', 'rgba(255, 0, 0, 0)')" onmouseout="document.getElementById('crop4').style.display='none';change_css('.redrect', 'background-color', 'rgba(255, 0, 0, 0.3)')"></div>
+<img src="d2inv_images/cropped_5.jpg" id="crop5" style="position:absolute;left:95px;top:31px;display:none"><div class="redrect" style="position:absolute;width:37px;height:30px;left:242px;top:226px" onmouseover="document.getElementById('crop5').style.display='block';change_css('.redrect', 'background-color', 'rgba(255, 0, 0, 0)')" onmouseout="document.getElementById('crop5').style.display='none';change_css('.redrect', 'background-color', 'rgba(255, 0, 0, 0.3)')"></div>
+<img src="d2inv_images/empty.jpg" width="800" height="600" usemap="#d2char" style="border-style:none"></div>
+
+<br><br>
+(make sure your character has a cube and has space in it before proceeding with the below).<br>
+body armor insert into cube: d2-insertItem-Alters.sh 1000800064000088c61606025ffcde3ded10ff0700f017e02fe03fe00fe1ff87ff93f83ff19fe27fc57f8b7f18ffff6dfcffffcff1ffffff9dfca1fc4fd9abfc7ff3ffcf01fd437f44ff467f47ff487f497f4aff4b64fea534ff929b0ff5ff3f<br>
+ring insert into cube: d2-insertItem-Alters.sh 100080006400602897e60602c4b34472ed8480f23ff35fe97fa7ff65ff9bfdff0f<br>
+jewel insert into cube: d2-insertItem-Alters.sh 10008000640062a856760782176c2366ed8438f03fc3bf86ff217f227f267f973f98ff98bf997f9aff9fcffc57fadfe97fd5ffb2ffcdfeff07<br>
+charm insert into cube: d2-insertItem-Alters.sh 1000800064006438d61603026c25a569ed8438f0bfc4bf897fe21fc54ff1afe2aff867f15bfcbbf84c7e28ff90fe33ff95fe77fa5ff6bfd9ffff<br>
+amulet insert into cube: d2-insertItem-Alters.sh 1000800064000468970607820281e500ed8480f23ff35fe97fa7ff65ff9bfdff0f
